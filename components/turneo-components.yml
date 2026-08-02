@@ -1,0 +1,23 @@
+generated: '2026-07-21'
+method: searched
+source: https://www.turneo.com/developers/guides/adding-turneo-elements
+docs: https://www.turneo.com/developers/guides
+components:
+  - family: Turneo Elements
+    kind: embeddable-widget
+    description: >-
+      Turneo Elements are prebuilt, embeddable booking surfaces a hotel or
+      partner drops into its own website so guests can browse, select, and book
+      experiences directly without leaving the site. Backed by the same v2
+      booking API and store configuration.
+    docs: https://www.turneo.com/developers/guides/adding-turneo-elements
+    features:
+      - Embed on partner/hotel website
+      - Apple Pay checkout (requires one-time domain verification)
+    related_guides:
+      - https://www.turneo.com/developers/guides/adding-turneo-elements
+      - https://www.turneo.com/developers/guides/enabling-apple-pay
+notes: >-
+  Loader script URL and exact web-component tag/attribute names are published in
+  the adding-turneo-elements guide but were not captured verbatim in this pass;
+  no values are fabricated here.

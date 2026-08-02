@@ -1,8 +1,29 @@
 aid: turneo
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/turneo.png
 name: Turneo
-description: 'Turneo is a company surfaced as a portfolio company of bessemer-venture-partners and added
-  to the API Evangelist network as a stub for enrichment. Sector: marketplaces. This profile is a lead
-  awaiting the enrichment pipeline.'
+description: >-
+  Turneo is an operating system for hotel experiences and services, backed by
+  Bessemer Venture Partners. It digitizes the activities, spa & wellness, dining,
+  rentals, transfers, and tickets a hotel offers, makes them bookable across
+  guest touchpoints, and deploys AI agents to automate the operations behind
+  them. Hotels and partners integrate through the Turneo v2 REST API
+  (https://api.turneo.co, API-key authenticated) to search experiences, retrieve
+  options and availability, and assemble and confirm booking orders, and through
+  embeddable Turneo Elements widgets that add browse-and-book surfaces (with
+  Apple Pay) directly to a partner website. It also plugs into existing tools
+  such as Bokun, OPERA Cloud, apaleo, MEWS, and REGIONDO.
 url: https://raw.githubusercontent.com/api-evangelist/turneo/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -12,11 +33,36 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
 - Company
 - Marketplaces
-apis: []
+- Travel
+- Hospitality
+- Hotels
+- Experiences
+- Booking
+- Activities
+- Tours
+apis:
+- name: Turneo v2 API
+  description: >-
+    REST booking API for searching experiences, retrieving options and
+    availability, and assembling and confirming booking orders. Authenticated
+    with an X-API-Key header; versioned in the URI path (/v2).
+  humanURL: https://www.turneo.com/developers
+  baseURL: https://api.turneo.co
+  tags:
+  - Booking
+  - Experiences
+  - Travel
+  properties:
+  - type: Authentication
+    url: authentication/turneo-authentication.yml
+  - type: Conventions
+    url: conventions/turneo-conventions.yml
+  - type: DataModel
+    url: data-model/turneo-data-model.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -25,3 +71,42 @@ maintainers:
 common:
 - type: Website
   url: https://www.turneo.com/
+- type: DeveloperPortal
+  url: https://www.turneo.com/developers
+- type: Documentation
+  url: https://www.turneo.com/developers/guides
+- type: APIReference
+  url: https://www.turneo.com/developers
+- type: GettingStarted
+  url: https://www.turneo.com/developers/guides/getting-started
+- type: HelpCenter
+  url: https://help.turneo.com
+- type: Blog
+  url: https://www.turneo.com/blog
+- type: TermsOfService
+  url: https://www.turneo.com/partner-terms-conditions
+- type: PrivacyPolicy
+  url: https://www.turneo.com/privacy-policy
+- type: Login
+  url: https://app.turneo.co
+- type: Authentication
+  url: authentication/turneo-authentication.yml
+- type: Conventions
+  url: conventions/turneo-conventions.yml
+- type: Components
+  url: components/turneo-components.yml
+- type: MCPServer
+  url: mcp/turneo-mcp.yml
+- type: LLMsTxt
+  url: llms/turneo-llms.txt
+- type: Lifecycle
+  url: lifecycle/turneo-lifecycle.yml
+- type: DataModel
+  url: data-model/turneo-data-model.yml
+- type: DomainSecurity
+  url: security/turneo-domain-security.yml
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 8
+  pass: local-v1

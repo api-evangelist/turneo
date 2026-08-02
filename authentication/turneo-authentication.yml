@@ -1,0 +1,23 @@
+generated: '2026-07-21'
+method: searched
+source: https://www.turneo.com/developers/guides/getting-started
+docs: https://www.turneo.com/developers/guides/getting-started
+summary:
+  types: [apiKey]
+  api_key_in: [header]
+  oauth2_flows: []
+schemes:
+  - name: ApiKeyAuth
+    type: apiKey
+    in: header
+    parameter: X-API-Key
+    description: >-
+      Every request to the Turneo v2 API must include a partner API key in the
+      X-API-Key request header. Keys are issued per partner/store from the
+      Turneo dashboard (app.turneo.co). No OAuth or OpenID Connect flow is
+      documented; the API key is the sole credential.
+    sources: [docs:getting-started]
+notes: >-
+  API host https://api.turneo.co returns HTTP 401 for all unauthenticated
+  requests (edge-gated), so no public OpenAPI/Swagger document is available to
+  derive from. This profile is captured from the published developer guides.

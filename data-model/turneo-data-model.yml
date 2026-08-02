@@ -1,0 +1,50 @@
+generated: '2026-07-21'
+method: derived
+source: https://www.turneo.com/developers/guides/getting-started
+notes: >-
+  Derived from the documented v2 API resource paths (no public OpenAPI spec is
+  available; api.turneo.co returns 401). Relationships reflect the documented
+  request paths and filter/id parameters, not a machine-read schema.
+entities:
+  - name: Store
+    description: A partner/hotel storefront that scopes experiences (storeId filter).
+  - name: Experience
+    description: A bookable activity, spa/wellness, dining, rental, transfer, or ticket offering.
+    endpoints:
+      - "GET /v2/experiences"
+      - "GET /v2/experiences/{experienceId}/options"
+  - name: Option
+    description: A bookable option/price variant of an experience.
+    endpoints:
+      - "GET /v2/experiences/{experienceId}/options"
+  - name: Availability
+    description: Bookable dates and time slots for an experience.
+    endpoints:
+      - "GET /v2/experiences/{experienceId}/availability/dates"
+      - "GET /v2/experiences/{experienceId}/availability/slots"
+  - name: BookingOrder
+    description: A stateful cart/order that bookings are added to, then confirmed.
+    endpoints:
+      - "POST /v2/booking-orders"
+      - "POST /v2/booking-orders/{id}/add"
+      - "POST /v2/booking-orders/{id}/remove"
+      - "POST /v2/booking-orders/{orderId}/confirm"
+  - name: Booking
+    description: An individual booking line item within a booking order.
+relationships:
+  - from: Experience
+    to: Store
+    type: belongs_to
+    via: storeId
+  - from: Experience
+    to: Option
+    type: has_many
+    via: experienceId
+  - from: Experience
+    to: Availability
+    type: has_many
+    via: experienceId
+  - from: BookingOrder
+    to: Booking
+    type: has_many
+    via: order

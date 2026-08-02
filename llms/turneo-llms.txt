@@ -1,0 +1,37 @@
+# Turneo
+
+> Turneo is an operating system for hotel experiences and services. It digitizes the activities, spa & wellness, dining, rentals, transfers, and tickets a hotel offers, makes them bookable across guest touchpoints, and deploys AI agents to automate operations. Partners integrate via the v2 REST API and embeddable Turneo Elements widgets.
+
+## API
+
+- [Turneo v2 API](https://www.turneo.com/developers): REST booking API at https://api.turneo.co, authenticated with an X-API-Key header. Search experiences, retrieve options and availability, and assemble/confirm booking orders.
+
+## Docs
+
+- [Developer Portal](https://www.turneo.com/developers): API reference landing page.
+- [Developer Guides](https://www.turneo.com/developers/guides): step-by-step integration guides.
+- [Getting Started](https://www.turneo.com/developers/guides/getting-started): search, price, and book experiences via the v2 flow.
+- [Multi-language Content](https://www.turneo.com/developers/guides/multi-language-content): requesting translated content.
+- [Adding Turneo Elements](https://www.turneo.com/developers/guides/adding-turneo-elements): embed the booking widget on a website.
+- [Enabling Apple Pay](https://www.turneo.com/developers/guides/enabling-apple-pay): domain verification for Apple Pay in Elements.
+- [Help Centre](https://help.turneo.com): partner help and support.
+
+## Endpoints
+
+- GET /v2/experiences — search experiences (storeId, country, city, from, until)
+- GET /v2/experiences/{experienceId}/options — list options/pricing
+- GET /v2/experiences/{experienceId}/availability/dates — available dates
+- GET /v2/experiences/{experienceId}/availability/slots — available time slots
+- POST /v2/booking-orders — create a booking order
+- POST /v2/booking-orders/{id}/add — add bookings
+- POST /v2/booking-orders/{id}/remove — remove bookings
+- POST /v2/booking-orders/{orderId}/confirm — confirm and purchase
+
+## Company
+
+- [Website](https://www.turneo.com/)
+- [Blog](https://www.turneo.com/blog)
+- [Case Studies](https://www.turneo.com/case-study)
+- [Terms & Conditions](https://www.turneo.com/partner-terms-conditions)
+- [Privacy Policy](https://www.turneo.com/privacy-policy)
+- [Sign In](https://app.turneo.co)

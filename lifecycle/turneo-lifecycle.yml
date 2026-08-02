@@ -1,0 +1,19 @@
+generated: '2026-07-21'
+method: searched
+source: https://www.turneo.com/developers/guides/getting-started
+versioning:
+  scheme: uri-path
+  current: v2
+  docs: https://www.turneo.com/developers/guides/getting-started
+deprecation:
+  policy_url: null
+  sunset_header: null
+  notes: No public deprecation/sunset policy documented.
+sla:
+  url: null
+status_page: null
+deprecated_operations: []
+notes: >-
+  Turneo versions its API in the URI path (/v2/...). No status page,
+  deprecation policy, or published SLA was found on the public developer
+  surface as of this pass.

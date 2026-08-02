@@ -1,0 +1,53 @@
+generated: '2026-07-21'
+method: searched
+source: https://www.turneo.com/developers/guides/getting-started
+docs: https://www.turneo.com/developers
+conventions:
+  authentication:
+    style: api-key-header
+    header: X-API-Key
+    ref: authentication/turneo-authentication.yml
+  versioning:
+    scheme: uri-path
+    current: v2
+    example: https://api.turneo.co/v2/experiences
+  media_type:
+    request: application/json
+    response: application/json
+    headers:
+      accept: application/json
+      content_type: application/json
+  base_url: https://api.turneo.co
+  booking_flow:
+    description: >-
+      Bookings are assembled as a stateful booking-order. Create an order, add or
+      remove individual bookings to it, then confirm to purchase.
+    steps:
+      - create: POST /v2/booking-orders
+      - add: POST /v2/booking-orders/{id}/add
+      - remove: POST /v2/booking-orders/{id}/remove
+      - confirm: POST /v2/booking-orders/{orderId}/confirm
+  search_filtering:
+    endpoint: GET /v2/experiences
+    parameters: [storeId, country, city, from, until]
+  availability:
+    dates: GET /v2/experiences/{experienceId}/availability/dates?from=&until=
+    slots: GET /v2/experiences/{experienceId}/availability/slots?date=
+  multi_language:
+    documented: true
+    ref: https://www.turneo.com/developers/guides/multi-language-content
+    notes: >-
+      The v2 API supports requesting and interpreting translated content; the
+      exact language selector (header vs query parameter) is documented in the
+      multi-language-content guide but was not captured verbatim in this pass.
+  idempotency:
+    documented: false
+    notes: No idempotency-key header or retry-safety contract is documented for booking-orders.
+  pagination:
+    documented: false
+    notes: No cursor/offset pagination contract is published for the experiences search.
+  rate_limits:
+    documented: false
+  error_envelope:
+    documented: false
+    notes: No public error-code registry or problem+json contract was found in the developer guides.
