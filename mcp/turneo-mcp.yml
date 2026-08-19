@@ -5,35 +5,41 @@ source: https://www.turneo.com/developers/guides/getting-started
 server:
   name: turneo
   transport: http
-  auth: {type: apiKey, header: X-API-Key}
+  auth:
+    type: apiKey
+    header: X-API-Key
   base_url: https://api.turneo.co
-notes: >-
-  No official hosted/remote Turneo MCP server was found. Tools below are a
-  candidate surface derived from the documented v2 API operations; there is no
-  public OpenAPI document (api.turneo.co returns 401 for unauthenticated
-  requests), so operations are keyed by their documented HTTP method + path.
+notes: No official hosted/remote Turneo MCP server was found. Tools below are a candidate surface derived
+  from the documented v2 API operations; there is no public OpenAPI document (api.turneo.co returns 401
+  for unauthenticated requests), so operations are keyed by their documented HTTP method + path.
 tools:
-  - name: search_experiences
-    description: Search bookable experiences, filtered by store, country, city, and date range.
-    source_operation: GET /v2/experiences
-  - name: get_experience_options
-    description: List the bookable options/pricing for an experience.
-    source_operation: GET /v2/experiences/{experienceId}/options
-  - name: get_availability_dates
-    description: Get available dates for an experience across a date range.
-    source_operation: GET /v2/experiences/{experienceId}/availability/dates
-  - name: get_availability_slots
-    description: Get available time slots for an experience on a given date.
-    source_operation: GET /v2/experiences/{experienceId}/availability/slots
-  - name: create_booking_order
-    description: Create a new booking order.
-    source_operation: POST /v2/booking-orders
-  - name: add_to_booking_order
-    description: Add bookings to an existing booking order.
-    source_operation: POST /v2/booking-orders/{id}/add
-  - name: remove_from_booking_order
-    description: Remove bookings from an existing booking order.
-    source_operation: POST /v2/booking-orders/{id}/remove
-  - name: confirm_booking_order
-    description: Confirm and purchase a booking order.
-    source_operation: POST /v2/booking-orders/{orderId}/confirm
+- name: search_experiences
+  description: Search bookable experiences, filtered by store, country, city, and date range.
+  source_operation: GET /v2/experiences
+- name: get_experience_options
+  description: List the bookable options/pricing for an experience.
+  source_operation: GET /v2/experiences/{experienceId}/options
+- name: get_availability_dates
+  description: Get available dates for an experience across a date range.
+  source_operation: GET /v2/experiences/{experienceId}/availability/dates
+- name: get_availability_slots
+  description: Get available time slots for an experience on a given date.
+  source_operation: GET /v2/experiences/{experienceId}/availability/slots
+- name: create_booking_order
+  description: Create a new booking order.
+  source_operation: POST /v2/booking-orders
+- name: add_to_booking_order
+  description: Add bookings to an existing booking order.
+  source_operation: POST /v2/booking-orders/{id}/add
+- name: remove_from_booking_order
+  description: Remove bookings from an existing booking order.
+  source_operation: POST /v2/booking-orders/{id}/remove
+- name: confirm_booking_order
+  description: Confirm and purchase a booking order.
+  source_operation: POST /v2/booking-orders/{orderId}/confirm
+deployment:
+  mode: none
+  verified: derived
+  tools: 8
+  checked: '2026-08-12'
+  source: catalog MCP census
