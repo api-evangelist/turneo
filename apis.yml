@@ -40,6 +40,16 @@ tags:
 - Travel
 - Hospitality
 - Hotels
+- Experience
+- Booking
+- Activities
+- Tours
+tags_raw:
+- Company
+- Marketplaces
+- Travel
+- Hospitality
+- Hotels
 - Experiences
 - Booking
 - Activities
@@ -53,6 +63,10 @@ apis:
   humanURL: https://www.turneo.com/developers
   baseURL: https://api.turneo.co
   tags:
+  - Booking
+  - Experience
+  - Travel
+  tags_raw:
   - Booking
   - Experiences
   - Travel
